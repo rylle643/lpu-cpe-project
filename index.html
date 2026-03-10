@@ -15,7 +15,7 @@
       --gold:  #c9981f;
       --gold2: #e8b82a;
       --off:   #c8bfaa;
-      --muted: #6b7a94;
+      --muted: #8a9ab5;
       --white: #ffffff;
     }
 
@@ -40,7 +40,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 72px 24px 60px;
+      padding: 72px 32px 64px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -65,21 +65,24 @@
       pointer-events: none;
     }
 
+    /* eyebrow */
     .eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.28em;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 28px;
+      line-height: 1.7;
       opacity: 0;
       animation: up 0.7s 0.1s ease forwards;
     }
 
+    /* headline */
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-size: clamp(3.6rem, 9vw, 7rem);
       font-weight: 700;
-      line-height: 1;
+      line-height: 1.0;
       letter-spacing: -0.01em;
       opacity: 0;
       animation: up 0.8s 0.2s ease forwards;
@@ -90,33 +93,35 @@
       color: var(--red);
     }
 
+    /* description */
     .sub {
-      margin-top: 28px;
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      margin-top: 32px;
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
       color: var(--muted);
       line-height: 1.85;
-      max-width: 440px;
+      max-width: 500px;
       opacity: 0;
       animation: up 0.8s 0.3s ease forwards;
     }
 
+    /* availability pill */
     .avail {
       margin-top: 36px;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(201,152,31,0.3);
+      gap: 10px;
+      border: 1px solid rgba(201,152,31,0.35);
       border-radius: 100px;
-      padding: 7px 18px;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
+      padding: 9px 22px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
       color: var(--off);
       opacity: 0;
       animation: up 0.8s 0.4s ease forwards;
     }
 
     .dot {
-      width: 7px; height: 7px;
+      width: 8px; height: 8px;
       border-radius: 50%;
       background: var(--gold2);
       animation: blink 2s ease-in-out infinite;
@@ -125,25 +130,26 @@
 
     @keyframes blink {
       0%, 100% { opacity: 1; }
-      50%       { opacity: 0.3; }
+      50%       { opacity: 0.25; }
     }
 
     .line {
       width: 40px;
       height: 1px;
       background: linear-gradient(to right, var(--red), var(--gold));
-      margin: 48px auto 0;
+      margin: 52px auto 0;
       opacity: 0;
       animation: up 0.8s 0.45s ease forwards;
     }
 
+    /* info blocks */
     .info {
       margin-top: 48px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
       width: 100%;
-      max-width: 560px;
+      max-width: 580px;
       border: 1px solid rgba(255,255,255,0.05);
       border-radius: 6px;
       overflow: hidden;
@@ -153,36 +159,42 @@
 
     .info-item {
       background: var(--navy2);
-      padding: 22px 16px;
-      font-size: 0.78rem;
+      padding: 24px 18px;
+      font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .info-item strong {
       display: block;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.35rem;
       font-weight: 600;
       color: var(--white);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
+    /* contact section */
     .cta-wrap {
-      margin-top: 48px;
+      margin-top: 52px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
+      width: 100%;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
       opacity: 0;
       animation: up 0.8s 0.6s ease forwards;
     }
 
     .cta-label {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
+      text-align: center;
     }
 
     .contact-links {
@@ -190,20 +202,20 @@
       flex-direction: column;
       gap: 10px;
       width: 100%;
-      max-width: 380px;
     }
 
     .contact-link {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       text-decoration: none;
       color: var(--white);
       background: var(--navy2);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 4px;
-      padding: 14px 20px;
-      font-size: 0.88rem;
+      padding: 16px 22px;
+      font-size: 0.95rem;
+      text-align: center;
       transition: border-color 0.2s, background 0.2s, transform 0.2s;
     }
 
@@ -213,13 +225,35 @@
       transform: translateY(-2px);
     }
 
-    .contact-link span.type { color: var(--muted); font-size: 0.7rem; display: block; margin-bottom: 3px; letter-spacing: 0.1em; text-transform: uppercase; }
-    .contact-link .arrow { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-left: 12px; }
+    .contact-link .type {
+      color: var(--muted);
+      font-size: 0.72rem;
+      display: block;
+      margin-bottom: 4px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .contact-link .arrow {
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-left: 14px;
+    }
+
+    /* fb note */
+    .fb-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 4px;
+      font-style: italic;
+    }
 
     footer {
       text-align: center;
-      padding: 24px;
-      font-size: 0.7rem;
+      padding: 26px;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
       color: var(--muted);
       border-top: 1px solid rgba(255,255,255,0.04);
@@ -232,8 +266,9 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 500px) {
       .info { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(3rem, 13vw, 4rem); }
     }
   </style>
 </head>
@@ -242,17 +277,21 @@
   <div class="accent-bar"></div>
 
   <main>
-    <p class="eyebrow">Lyceum of the Philippines University &nbsp;·&nbsp; Computer Engineering</p>
+
+    <p class="eyebrow">
+      Lyceum of the Philippines University &nbsp;·&nbsp; Computer Engineering<br/>
+      3rd Year Students &nbsp;·&nbsp; S.Y. 2025–2026
+    </p>
 
     <h1>We'll Build<br/>Your <em>Website.</em></h1>
 
     <p class="sub">
-      We are computer engineering students looking for a business or company without a proper website. As part of our Software Design course, we will design and build one for you — completely free of charge.
+      We are 3rd year Computer Engineering students at Lyceum of the Philippines University. As part of our Software Design course, we are looking for a business or company without a proper website — and we will build one for you, completely free of charge. You are in full control of the design and content. Whatever you want on your website, we will build it exactly the way you want it.
     </p>
 
     <div class="avail">
       <span class="dot"></span>
-      Accepting one client only — once taken, we will no longer be available
+      Accepting one client only — once taken, we are no longer available
     </div>
 
     <div class="line"></div>
@@ -270,31 +309,44 @@
         <strong>Real Work</strong>
         A fully built, working website
       </div>
+      <div class="info-item" style="grid-column: 1 / -1; border-top: 2px solid rgba(255,255,255,0.04);">
+        <strong>Your Vision</strong>
+        You decide everything — the look, the content, the layout. We follow your instructions and build it exactly the way you want it.
+      </div>
     </div>
 
     <div class="cta-wrap">
       <p class="cta-label">Interested? Contact Us</p>
       <div class="contact-links">
+
         <a class="contact-link" href="mailto:2023-2-01900@lpunetwork.edu.ph">
-          <div>
+          <div style="text-align:center;">
             <span class="type">Email</span>
             2023-2-01900@lpunetwork.edu.ph
           </div>
-          <span class="arrow">→</span>
         </a>
+
+        <a class="contact-link" href="mailto:2023-2-02314@lpunetwork.edu.ph">
+          <div style="text-align:center;">
+            <span class="type">Email</span>
+            2023-2-02314@lpunetwork.edu.ph
+          </div>
+        </a>
+
         <a class="contact-link" href="https://www.facebook.com" target="_blank" rel="noopener">
-          <div>
+          <div style="text-align:center;">
             <span class="type">Facebook</span>
             Send us a message
           </div>
-          <span class="arrow">→</span>
         </a>
+
       </div>
     </div>
+
   </main>
 
   <footer>
-    <b>LPU</b> &nbsp;·&nbsp; Software Design Course &nbsp;·&nbsp; 2025
+    <b>LPU</b> &nbsp;·&nbsp; Software Design Course &nbsp;·&nbsp; S.Y. 2025–2026
   </footer>
 
 </body>
