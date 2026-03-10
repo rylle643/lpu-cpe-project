@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Website — LPU Computer Engineering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #080f1e;
+      --navy2: #0d1a30;
+      --red:   #b8131b;
+      --gold:  #c9981f;
+      --gold2: #e8b82a;
+      --off:   #c8bfaa;
+      --muted: #6b7a94;
+      --white: #ffffff;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accent-bar {
+      height: 3px;
+      background: linear-gradient(to right, var(--red), var(--gold));
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 72px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,19,27,0.09) 0%, transparent 65%);
+      top: -160px; right: -160px;
+      pointer-events: none;
+    }
+    main::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,152,31,0.07) 0%, transparent 65%);
+      bottom: -140px; left: -140px;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: up 0.7s 0.1s ease forwards;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      opacity: 0;
+      animation: up 0.8s 0.2s ease forwards;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .sub {
+      margin-top: 28px;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 440px;
+      opacity: 0;
+      animation: up 0.8s 0.3s ease forwards;
+    }
+
+    .avail {
+      margin-top: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(201,152,31,0.3);
+      border-radius: 100px;
+      padding: 7px 18px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--off);
+      opacity: 0;
+      animation: up 0.8s 0.4s ease forwards;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold2);
+      animation: blink 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.3; }
+    }
+
+    .line {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(to right, var(--red), var(--gold));
+      margin: 48px auto 0;
+      opacity: 0;
+      animation: up 0.8s 0.45s ease forwards;
+    }
+
+    .info {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      width: 100%;
+      max-width: 560px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 6px;
+      overflow: hidden;
+      opacity: 0;
+      animation: up 0.8s 0.5s ease forwards;
+    }
+
+    .info-item {
+      background: var(--navy2);
+      padding: 22px 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .info-item strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .cta-wrap {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      opacity: 0;
+      animation: up 0.8s 0.6s ease forwards;
+    }
+
+    .cta-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--navy2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--red);
+      background: rgba(184,19,27,0.08);
+      transform: translateY(-2px);
+    }
+
+    .contact-link span.type { color: var(--muted); font-size: 0.7rem; display: block; margin-bottom: 3px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .contact-link .arrow { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-left: 12px; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    footer b { color: var(--red); font-weight: 500; }
+
+    @keyframes up {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .info { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="accent-bar"></div>
+
+  <main>
+    <p class="eyebrow">Lyceum of the Philippines University &nbsp;·&nbsp; Computer Engineering</p>
+
+    <h1>We'll Build<br/>Your <em>Website.</em></h1>
+
+    <p class="sub">
+      We are computer engineering students looking for a business or company without a proper website. As part of our Software Design course, we will design and build one for you — completely free of charge.
+    </p>
+
+    <div class="avail">
+      <span class="dot"></span>
+      Accepting one client only — once taken, we will no longer be available
+    </div>
+
+    <div class="line"></div>
+
+    <div class="info">
+      <div class="info-item">
+        <strong>No Fee</strong>
+        Zero cost, no strings attached
+      </div>
+      <div class="info-item">
+        <strong>1 Slot</strong>
+        Once taken, we are closed
+      </div>
+      <div class="info-item">
+        <strong>Real Work</strong>
+        A fully built, working website
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <p class="cta-label">Interested? Contact Us</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:2023-2-01900@lpunetwork.edu.ph">
+          <div>
+            <span class="type">Email</span>
+            2023-2-01900@lpunetwork.edu.ph
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://www.facebook.com" target="_blank" rel="noopener">
+          <div>
+            <span class="type">Facebook</span>
+            Send us a message
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <b>LPU</b> &nbsp;·&nbsp; Software Design Course &nbsp;·&nbsp; 2025
+  </footer>
+
+</body>
+</html>
