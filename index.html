@@ -65,7 +65,6 @@
       pointer-events: none;
     }
 
-    /* eyebrow */
     .eyebrow {
       font-size: 0.78rem;
       letter-spacing: 0.22em;
@@ -77,7 +76,6 @@
       animation: up 0.7s 0.1s ease forwards;
     }
 
-    /* headline */
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.6rem, 9vw, 7rem);
@@ -88,23 +86,18 @@
       animation: up 0.8s 0.2s ease forwards;
     }
 
-    h1 em {
-      font-style: normal;
-      color: var(--red);
-    }
+    h1 em { font-style: normal; color: var(--red); }
 
-    /* description */
     .sub {
       margin-top: 32px;
       font-size: clamp(1.05rem, 2.2vw, 1.2rem);
       color: var(--muted);
       line-height: 1.85;
-      max-width: 500px;
+      max-width: 520px;
       opacity: 0;
       animation: up 0.8s 0.3s ease forwards;
     }
 
-    /* availability pill */
     .avail {
       margin-top: 36px;
       display: inline-flex;
@@ -142,14 +135,13 @@
       animation: up 0.8s 0.45s ease forwards;
     }
 
-    /* info blocks */
     .info {
       margin-top: 48px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
       width: 100%;
-      max-width: 580px;
+      max-width: 620px;
       border: 1px solid rgba(255,255,255,0.05);
       border-radius: 6px;
       overflow: hidden;
@@ -163,6 +155,7 @@
       font-size: 0.9rem;
       color: var(--muted);
       line-height: 1.55;
+      text-align: center;
     }
 
     .info-item strong {
@@ -174,19 +167,149 @@
       margin-bottom: 5px;
     }
 
-    /* contact section */
+    .info-item.full {
+      grid-column: 1 / -1;
+      border-top: 2px solid rgba(255,255,255,0.04);
+    }
+
+    .scope {
+      margin-top: 48px;
+      width: 100%;
+      max-width: 620px;
+      background: var(--navy2);
+      border: 1px solid rgba(201,152,31,0.15);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      padding: 28px 30px;
+      text-align: left;
+      opacity: 0;
+      animation: up 0.8s 0.55s ease forwards;
+    }
+
+    .scope-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .scope-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .scope-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .scope-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .not-scope {
+      margin-top: 12px;
+      width: 100%;
+      max-width: 620px;
+      background: rgba(184,19,27,0.05);
+      border: 1px solid rgba(184,19,27,0.15);
+      border-left: 3px solid var(--red);
+      border-radius: 4px;
+      padding: 20px 30px;
+      text-align: left;
+      opacity: 0;
+      animation: up 0.8s 0.6s ease forwards;
+    }
+
+    .not-scope-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .not-scope p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .process {
+      margin-top: 48px;
+      width: 100%;
+      max-width: 620px;
+      opacity: 0;
+      animation: up 0.8s 0.62s ease forwards;
+    }
+
+    .process-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .step {
+      background: var(--navy2);
+      padding: 20px 14px;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--red);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      color: var(--white);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
     .cta-wrap {
       margin-top: 52px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
       gap: 16px;
       width: 100%;
       max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
       opacity: 0;
-      animation: up 0.8s 0.6s ease forwards;
+      animation: up 0.8s 0.68s ease forwards;
     }
 
     .cta-label {
@@ -202,6 +325,7 @@
       flex-direction: column;
       gap: 10px;
       width: 100%;
+      align-items: stretch;
     }
 
     .contact-link {
@@ -216,6 +340,7 @@
       padding: 16px 22px;
       font-size: 0.95rem;
       text-align: center;
+      cursor: pointer;
       transition: border-color 0.2s, background 0.2s, transform 0.2s;
     }
 
@@ -235,21 +360,6 @@
       text-align: center;
     }
 
-    .contact-link .arrow {
-      color: var(--gold);
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-left: 14px;
-    }
-
-    /* fb note */
-    .fb-note {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 4px;
-      font-style: italic;
-    }
-
     footer {
       text-align: center;
       padding: 26px;
@@ -266,8 +376,9 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 540px) {
       .info { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
       h1 { font-size: clamp(3rem, 13vw, 4rem); }
     }
   </style>
@@ -286,7 +397,7 @@
     <h1>We'll Build<br/>Your <em>Website.</em></h1>
 
     <p class="sub">
-      We are 3rd year Computer Engineering students at Lyceum of the Philippines University. As part of our Software Design course, we are looking for a business or company without a proper website — and we will build one for you, completely free of charge. You are in full control of the design and content. Whatever you want on your website, we will build it exactly the way you want it.
+      We are 3rd year Computer Engineering students at LPU looking for a business or company without a proper website. As part of our Software Design course, we will build you a simple, informational website — completely free of charge.
     </p>
 
     <div class="avail">
@@ -306,41 +417,60 @@
         Once taken, we are closed
       </div>
       <div class="info-item">
-        <strong>Real Work</strong>
-        A fully built, working website
+        <strong>Simple & Clean</strong>
+        An informational website for your business
       </div>
-      <div class="info-item" style="grid-column: 1 / -1; border-top: 2px solid rgba(255,255,255,0.04);">
-        <strong>Your Vision</strong>
-        You decide everything — the look, the content, the layout. We follow your instructions and build it exactly the way you want it.
+      <div class="info-item full">
+        <strong>What's Included</strong>
+        A clean website with information about your business — who you are, what you offer, and how customers can contact you. No complex features, just a proper online presence.
+      </div>
+    </div>
+
+    <div class="scope">
+      <p class="scope-title">What We Can Build</p>
+      <ul class="scope-list">
+        <li>A homepage that introduces your business</li>
+        <li>An about page describing who you are and your story</li>
+        <li>A services or products page listing what you offer</li>
+        <li>A contact page with your address, number, and social media</li>
+        <li>A simple, mobile-friendly design based on your preferences</li>
+      </ul>
+    </div>
+
+    <div class="not-scope">
+      <p class="not-scope-title">Please Note</p>
+      <p>We are beginners, so we are only able to handle simple informational websites. We are not able to build online stores, payment systems, booking systems, or anything requiring advanced features.</p>
+    </div>
+
+    <div class="process">
+      <p class="process-title">How It Works</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-label">You Reach Out</div>
+          <div class="step-desc">Contact us via email or Facebook</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-label">We Discuss</div>
+          <div class="step-desc">You tell us what you want on your site</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-label">We Build</div>
+          <div class="step-desc">We design and develop your website</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-label">You Get It</div>
+          <div class="step-desc">We hand it over, completely free</div>
+        </div>
       </div>
     </div>
 
     <div class="cta-wrap">
       <p class="cta-label">Interested? Contact Us</p>
-      <div class="contact-links">
-
-        <a class="contact-link" href="mailto:2023-2-01900@lpunetwork.edu.ph">
-          <div style="text-align:center;">
-            <span class="type">Email</span>
-            2023-2-01900@lpunetwork.edu.ph
-          </div>
-        </a>
-
-        <a class="contact-link" href="mailto:2023-2-02314@lpunetwork.edu.ph">
-          <div style="text-align:center;">
-            <span class="type">Email</span>
-            2023-2-02314@lpunetwork.edu.ph
-          </div>
-        </a>
-
-        <a class="contact-link" href="https://www.facebook.com" target="_blank" rel="noopener">
-          <div style="text-align:center;">
-            <span class="type">Facebook</span>
-            Send us a message
-          </div>
-        </a>
-
-      </div>
+      <div class="contact-links" id="contacts"></div>
     </div>
 
   </main>
@@ -348,6 +478,33 @@
   <footer>
     <b>LPU</b> &nbsp;·&nbsp; Software Design Course &nbsp;·&nbsp; S.Y. 2025–2026
   </footer>
+
+  <script>
+    // Emails are split to prevent scraping / Cloudflare mangling
+    const contacts = document.getElementById('contacts');
+
+    const emails = [
+      ['2023-2-01900', 'lpunetwork.edu.ph'],
+      ['2023-2-02314', 'lpunetwork.edu.ph'],
+    ];
+
+    emails.forEach(([user, domain]) => {
+      const addr = user + '@' + domain;
+      const el = document.createElement('div');
+      el.className = 'contact-link';
+      el.innerHTML = `<div><span class="type">Email</span>${addr}</div>`;
+      el.addEventListener('click', () => { window.location.href = 'mailto:' + addr; });
+      contacts.appendChild(el);
+    });
+
+    const fb = document.createElement('a');
+    fb.className = 'contact-link';
+    fb.href = 'https://www.facebook.com';
+    fb.target = '_blank';
+    fb.rel = 'noopener';
+    fb.innerHTML = `<div><span class="type">Facebook</span>Send us a message</div>`;
+    contacts.appendChild(fb);
+  </script>
 
 </body>
 </html>
